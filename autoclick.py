@@ -17,10 +17,10 @@ def scut():
     browser.maximize_window()
     # 格式是PEP8自动转的
     # 这里是找到输入框,发送要输入的用户名和密码,模拟登陆
-    browser.find_element_by_xpath("//*[@id='signinSrEmail']").send_keys(os.environ['SCUT_USER'])
-    browser.find_element_by_xpath("//*[@id='signinSrPassword']").send_keys(os.environ['SCUT_PASSWORD'])
+    browser.find_element_by_id("signinSrEmail").send_keys(os.environ['SCUT_USER'])
+    browser.find_element_by_id("signinSrPassword").send_keys(os.environ['SCUT_PASSWORD'])
     # 在输入用户名和密码之后,点击登陆按钮
-    browser.find_element_by_xpath("//*[@type='submit']").click()
+    browser.find_element_by_css_selector("button.btn").click()
     time.sleep(50)
 
 if __name__ == '__main__':
