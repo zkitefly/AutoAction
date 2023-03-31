@@ -32,24 +32,8 @@ jobs:
               && sudo mv chromedriver /usr/local/bin/chromedriver \
               && sudo chmod +x /usr/local/bin/chromedriver \
               && chromedriver --version
-        - name: 'Get Date'
-          run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shenzhen' date '+%Y-%m-%d %T')"
         - name: 'AutoClick'
           env:
             SCUT_USER: ${{ secrets.SCUT_USER }}
             SCUT_PASSWORD: ${{ secrets.SCUT_PASSWORD }}
-            SITUYUN_USER: ${{ secrets.SITUYUN_USER }}
-            SITUYUN_PASSWORD: ${{ secrets.SITUYUN_PASSWORD }}
           run: python autoclick.py
-        - name: 'Send mail'
-          uses: dawidd6/action-send-mail@master
-          with:
-            server_address: smtp.163.com
-            server_port: 465
-            username: ${{ secrets.MAIL_USERNAME }}
-            password: ${{ secrets.MAIL_PASSWORD }}
-            subject: 华工疫情健康申报系统操作结果 (${{env.REPORT_DATE}})
-            body: file://email.txt
-            to: 2679225466@qq.com
-            from: GitHub Actions
-            content_type: text/html
