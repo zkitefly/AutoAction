@@ -30,7 +30,7 @@ def scut():
         password = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.ID, "signinSrPassword")))
         password.send_keys(os.environ['SCUT_PASSWORD'])
 
-        login_button = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn")))
+        login_button = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn-primary")))
         login_button.click()
 
         time.sleep(50)
