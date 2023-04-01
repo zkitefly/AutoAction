@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
@@ -13,7 +14,7 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 
 # 用Service类来设置chromedrive路径
 chromedriver_path = "/usr/bin/chromedriver"
-service = webdriver.chrome.service.Service(chromedriver_path)
+service = Service(chromedriver_path)
 webdriver.chrome.service = service
 
 browser = Chrome(options=chrome_options)
