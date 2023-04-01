@@ -15,9 +15,9 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 # 用Service类来设置chromedrive路径
 chromedriver_path = "/usr/bin/chromedriver"
 service = Service(chromedriver_path)
-webdriver.chrome.service = service
 
-browser = Chrome(options=chrome_options)
+browser = Chrome(options=chrome_options, service=service)
+
 
 def scut():
     try:
