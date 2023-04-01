@@ -1,4 +1,5 @@
 # 本 Fork 为 AutoAction 的上游分支，用于自动登录诚通网盘。部分代码由 New Bing 和 ChatGPT 优化调整。（因为诚通网盘不登录30天就会删文件😑）
+
 # [AutoAction](https://github.com/Saujyun/AutoAction)简介
     该github工程主要是为了解决疫情期间华工需要不断地申报自身健康而建立,工程中使用GitHub Action来实现每天自动打卡工作。
 # 准备工作
