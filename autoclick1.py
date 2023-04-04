@@ -18,7 +18,6 @@ service = Service(chromedriver_path)
 
 browser = Chrome(options=chrome_options, service=service)
 
-
 def scut():
     try:
         browser.get('CTFILE_CHECKUOTURL')
