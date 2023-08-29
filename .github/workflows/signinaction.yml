@@ -23,7 +23,7 @@ jobs:
           run: |
               CHROME_VERSION=$(google-chrome --version | cut -f 3 -d ' ') \
               && echo "CHROME_VERSION: $CHROME_VERSION" \
-              && curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_VERSION/linux64/chrome-linux64.zip" \
+              && curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_VERSION/linux64/chromedriver-linux64.zip" \
               && cd /tmp \
               && unzip chromedriver_linux64.zip \
               && rm -rf chromedriver_linux64.zip \
